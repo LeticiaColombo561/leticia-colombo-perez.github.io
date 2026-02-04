@@ -12,6 +12,27 @@ body {
     color: #222;
 }
 
+/* ===== SIDE IMAGE ===== */
+.side-image {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 260px;
+    background-image: url("https://img.freepik.com/foto-gratis/arte-digital-tecnologia-inteligencia-artificial_23-2151719599.jpg?semt=ais_hybrid&w=740&q=80");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+/* leave space so content doesn't hide under image */
+.main {
+    margin-right: 260px;
+}
+
+/* ===== HEADER ===== */
+
 header {
     background: #0f172a;
     color: white;
@@ -30,6 +51,24 @@ header h2 {
     opacity: 0.9;
 }
 
+.header-links {
+    margin-top: 15px;
+}
+
+.header-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    opacity: 0.9;
+}
+
+.header-links a:hover {
+    text-decoration: underline;
+}
+
+/* ===== NAV ===== */
+
 nav {
     background: white;
     padding: 15px;
@@ -37,6 +76,7 @@ nav {
     position: sticky;
     top: 0;
     border-bottom: 1px solid #e5e7eb;
+    z-index: 10;
 }
 
 nav a {
@@ -45,6 +85,8 @@ nav a {
     color: #0f172a;
     font-weight: bold;
 }
+
+/* ===== SECTIONS ===== */
 
 section {
     max-width: 1000px;
@@ -61,6 +103,8 @@ section {
     line-height: 1.7;
     font-size: 16px;
 }
+
+/* ===== GRID / CARDS ===== */
 
 .grid {
     display: grid;
@@ -93,6 +137,8 @@ section {
     margin-bottom: 10px;
 }
 
+/* ===== FOOTER ===== */
+
 footer {
     text-align: center;
     padding: 40px;
@@ -105,9 +151,19 @@ footer {
 
 <body>
 
+<div class="side-image"></div>
+
+<div class="main">
+
 <header>
     <h1>Leticia Colombo Perez</h1>
     <h2>Data Scientist — Machine Learning — AI</h2>
+
+    <div class="header-links">
+        <a href="https://github.com/LeticiaColombo561" target="_blank">GitHub</a>
+        |
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+    </div>
 </header>
 
 <nav>
@@ -133,12 +189,12 @@ footer {
             <span class="badge">Forecasting</span>
             <h3>Forecasting with Foundational Models</h3>
             <p>Time series forecasting using foundation models and modern ML approaches. Model comparison and evaluation pipeline.</p>
-            
-            <a href="https://github.com/LeticiaColombo561/forecasting_foundational_models">
+
+            <a href="https://github.com/LeticiaColombo561/forecasting_foundational_models" target="_blank">
                 Repository
             </a><br><br>
-        
-            <a href="https://nbviewer.org/github/LeticiaColombo561/forecasting_foundational_models">
+
+            <a href="https://nbviewer.org/github/LeticiaColombo561/forecasting_foundational_models" target="_blank">
                 View notebooks
             </a>
         </div>
@@ -147,27 +203,26 @@ footer {
             <span class="badge">ML Pipeline</span>
             <h3>Time Series Forecasting Pipeline</h3>
             <p>End-to-end forecasting pipeline including preprocessing, feature engineering, model training and evaluation workflow.</p>
-        
-            <a href="https://github.com/LeticiaColombo561/forecsting_pipeline">
+
+            <a href="https://github.com/LeticiaColombo561/forecsting_pipeline" target="_blank">
                 Repository
             </a><br><br>
-        
-            <a href="https://nbviewer.org/github/LeticiaColombo561/forecsting_pipeline">
-                View Project
+
+            <a href="https://nbviewer.org/github/LeticiaColombo561/forecsting_pipeline" target="_blank">
+                View project
             </a>
         </div>
-
 
         <div class="card">
             <span class="badge">Deep Learning</span>
             <h3>LSTM Time Series Forecasting</h3>
             <p>LSTM neural network for time series forecasting with sequence modeling and performance evaluation.</p>
-        
-            <a href="https://github.com/LeticiaColombo561/LSTM">
+
+            <a href="https://github.com/LeticiaColombo561/LSTM" target="_blank">
                 Repository
             </a><br><br>
-        
-            <a href="https://nbviewer.org/github/LeticiaColombo561/LSTM/blob/main/LTSM_series.ipynb">
+
+            <a href="https://nbviewer.org/github/LeticiaColombo561/LSTM/blob/main/LTSM_series.ipynb" target="_blank">
                 View notebook
             </a>
         </div>
@@ -176,16 +231,17 @@ footer {
             <span class="badge">Recommender</span>
             <h3>Cross-Selling ML Model</h3>
             <p>Machine learning model for cross-selling and next-best-product prediction using customer behavioral features.</p>
-        
-            <a href="https://github.com/LeticiaColombo561/cross-selling-model-ml">
+
+            <a href="https://github.com/LeticiaColombo561/cross-selling-model-ml" target="_blank">
                 Repository
             </a><br><br>
-        
-            <a href="https://nbviewer.org/github/LeticiaColombo561/cross-selling-model-ml">
+
+            <a href="https://nbviewer.org/github/LeticiaColombo561/cross-selling-model-ml" target="_blank">
                 View notebooks
             </a>
         </div>
 
+    </div>
 </section>
 
 <section id="education">
@@ -204,19 +260,39 @@ footer {
             <h3>Postgraduate in Data Science & AI</h3>
         </div>
 
+        <div class="card">
+            <h3>Professional Profile</h3>
+            <p>
+                Full CV and credentials available on LinkedIn.
+            </p>
+            <a href="https://www.linkedin.com/" target="_blank">
+                View LinkedIn Profile
+            </a>
+        </div>
+
     </div>
 </section>
 
 <section id="contact">
     <div class="section-title">Contact</div>
     <div class="card">
-        GitHub: <a href="https://github.com/leticia-colombo-perez">github.com/leticia-colombo-perez</a>
+        GitHub:
+        <a href="https://github.com/LeticiaColombo561" target="_blank">
+            github.com/LeticiaColombo561
+        </a>
+        <br><br>
+        LinkedIn:
+        <a href="https://www.linkedin.com/" target="_blank">
+            linkedin.com
+        </a>
     </div>
 </section>
 
 <footer>
     © 2026 Leticia Colombo Perez — Data Science Portfolio
 </footer>
+
+</div>
 
 </body>
 </html>
