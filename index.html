@@ -4,37 +4,35 @@
 <meta charset="UTF-8">
 <title>Leticia Colombo Perez — Data Science Portfolio</title>
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7fa;
-    color: #222;
+    background: #0b1020;
+    color: #e6e9f2;
 }
 
-/* ===== SIDE IMAGE ===== */
 .side-image {
     position: fixed;
-    right: 0;
+    left: 0;
     top: 0;
     height: 100vh;
-    width: 260px;
-    background-image: url("https://img.freepik.com/foto-gratis/arte-digital-tecnologia-inteligencia-artificial_23-2151719599.jpg?semt=ais_hybrid&w=740&q=80");
+    width: 280px;
+    background-image: url("https://img.freepik.com/foto-gratis/arte-digital-tecnologia-inteligencia-artificial_23-2151719599.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.9;
 }
 
-/* leave space so content doesn't hide under image */
 .main {
-    margin-right: 260px;
+    margin-left: 280px;
 }
-
-/* ===== HEADER ===== */
 
 header {
-    background: #0f172a;
+    background: linear-gradient(135deg, #1e293b, #312e81);
     color: white;
     padding: 60px 20px;
     text-align: center;
@@ -48,104 +46,102 @@ header h1 {
 header h2 {
     margin-top: 10px;
     font-weight: normal;
-    opacity: 0.9;
 }
 
 .header-links {
-    margin-top: 15px;
+    margin-top: 18px;
 }
 
 .header-links a {
-    color: white;
+    color: #a5b4fc;
     text-decoration: none;
     font-weight: bold;
-    margin: 0 10px;
-    opacity: 0.9;
+    margin: 0 14px;
+    font-size: 18px;
 }
-
-.header-links a:hover {
-    text-decoration: underline;
-}
-
-/* ===== NAV ===== */
 
 nav {
-    background: white;
+    background: #111827;
     padding: 15px;
     text-align: center;
     position: sticky;
     top: 0;
-    border-bottom: 1px solid #e5e7eb;
-    z-index: 10;
+    border-bottom: 1px solid #1f2937;
 }
 
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #0f172a;
+    color: #c7d2fe;
     font-weight: bold;
 }
-
-/* ===== SECTIONS ===== */
 
 section {
     max-width: 1000px;
     margin: 60px auto;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 .section-title {
     font-size: 28px;
     margin-bottom: 20px;
+    color: #a5b4fc;
 }
-
-.about {
-    line-height: 1.7;
-    font-size: 16px;
-}
-
-/* ===== GRID / CARDS ===== */
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 24px;
 }
 
 .card {
-    background: white;
+    background: #111827;
     padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.15s ease;
-}
-
-.card:hover {
-    transform: translateY(-4px);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    border: 1px solid #1f2937;
 }
 
 .card h3 {
     margin-top: 0;
+    color: white;
+}
+
+.card p {
+    color: #cbd5f5;
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: none;
+    color: #818cf8;
+    font-weight: bold;
+}
+
+.btn-link i {
+    margin-right: 6px;
 }
 
 .badge {
     display: inline-block;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 20px;
     font-size: 12px;
-    background: #e2e8f0;
-    margin-bottom: 10px;
+    background: #312e81;
+    color: #c7d2fe;
+    margin-bottom: 12px;
 }
-
-/* ===== FOOTER ===== */
 
 footer {
     text-align: center;
     padding: 40px;
-    background: #0f172a;
-    color: white;
+    background: #111827;
+    color: #9aa4c7;
     margin-top: 60px;
+    border-top: 1px solid #1f2937;
 }
+
 </style>
 </head>
 
@@ -157,12 +153,16 @@ footer {
 
 <header>
     <h1>Leticia Colombo Perez</h1>
-    <h2>Data Scientist — Machine Learning — AI</h2>
+    <h2>Data Scientist — ML — AI</h2>
 
     <div class="header-links">
-        <a href="https://github.com/LeticiaColombo561" target="_blank">GitHub</a>
-        |
-        <a href="https://www.linkedin.com/in/leticia-colombo-perez/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/LeticiaColombo561" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/in/leticia-colombo-perez/" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
     </div>
 </header>
 
@@ -175,124 +175,86 @@ footer {
 
 <section id="about">
     <div class="section-title">About Me</div>
-    <div class="about">
-        I have over 3 years of experience as a Data Scientist and more than 5 years as a Data Analyst, with a strong track record in Machine Learning and Deep Learning across supervised and unsupervised methods. My work includes classification models, recommendation systems, image neural networks, and pricing optimization strategies. I manage end-to-end data science projects from problem definition to production pipelines, with a structured and business-oriented approach.
-    </div>
+    <p>
+        Data Scientist with strong experience in ML, Deep Learning,
+        forecasting and recommender systems. End-to-end DS pipelines.
+    </p>
 </section>
 
 <section id="projects">
-    <div class="section-title">Projects</div>
+<div class="section-title">Projects</div>
 
-    <div class="grid">
+<div class="grid">
 
-        <div class="card">
-            <span class="badge">Forecasting</span>
-            <h3>Forecasting with Foundational Models</h3>
-            <p>Time series forecasting using foundation models and modern ML approaches. Model comparison and evaluation pipeline.</p>
+<div class="card">
+<span class="badge"><i class="fa-solid fa-chart-line"></i> Forecasting</span>
+<h3>Forecasting with Foundational Models</h3>
+<a class="btn-link" href="https://github.com/LeticiaColombo561/forecasting_foundational_models" target="_blank">
+<i class="fab fa-github"></i> Repository
+</a>
+</div>
 
-            <a href="https://github.com/LeticiaColombo561/forecasting_foundational_models" target="_blank">
-                Repository
-            </a><br><br>
+<div class="card">
+<span class="badge"><i class="fa-solid fa-gears"></i> Pipeline</span>
+<h3>Forecasting Pipeline</h3>
+<a class="btn-link" href="https://github.com/LeticiaColombo561/forecsting_pipeline" target="_blank">
+<i class="fab fa-github"></i> Repository
+</a>
+</div>
 
-            <a href="https://nbviewer.org/github/LeticiaColombo561/forecasting_foundational_models" target="_blank">
-                View notebooks
-            </a>
-        </div>
+<div class="card">
+<span class="badge"><i class="fa-solid fa-brain"></i> Deep Learning</span>
+<h3>LSTM Time Series</h3>
+<a class="btn-link" href="https://github.com/LeticiaColombo561/LSTM" target="_blank">
+<i class="fab fa-github"></i> Repository
+</a>
+</div>
 
-        <div class="card">
-            <span class="badge">ML Pipeline</span>
-            <h3>Time Series Forecasting Pipeline</h3>
-            <p>End-to-end forecasting pipeline including preprocessing, feature engineering, model training and evaluation workflow.</p>
+<div class="card">
+<span class="badge"><i class="fa-solid fa-cart-shopping"></i> Recommender</span>
+<h3>Cross-Selling Model</h3>
+<a class="btn-link" href="https://github.com/LeticiaColombo561/cross-selling-model-ml" target="_blank">
+<i class="fab fa-github"></i> Repository
+</a>
+</div>
 
-            <a href="https://github.com/LeticiaColombo561/forecsting_pipeline" target="_blank">
-                Repository
-            </a><br><br>
+<div class="card">
+<span class="badge"><i class="fa-solid fa-image"></i> Computer Vision</span>
+<h3>Image Classification with CNN</h3>
+<a class="btn-link" href="#">
+<i class="fab fa-github"></i> Repository
+</a>
+</div>
 
-            <a href="https://nbviewer.org/github/LeticiaColombo561/forecsting_pipeline" target="_blank">
-                View project
-            </a>
-        </div>
-
-        <div class="card">
-            <span class="badge">Deep Learning</span>
-            <h3>LSTM Time Series Forecasting</h3>
-            <p>LSTM neural network for time series forecasting with sequence modeling and performance evaluation.</p>
-
-            <a href="https://github.com/LeticiaColombo561/LSTM" target="_blank">
-                Repository
-            </a><br><br>
-
-            <a href="https://nbviewer.org/github/LeticiaColombo561/LSTM/blob/main/LTSM_series.ipynb" target="_blank">
-                View notebook
-            </a>
-        </div>
-
-        <div class="card">
-            <span class="badge">Recommender</span>
-            <h3>Cross-Selling ML Model</h3>
-            <p>Machine learning model for cross-selling and next-best-product prediction using customer behavioral features.</p>
-
-            <a href="https://github.com/LeticiaColombo561/cross-selling-model-ml" target="_blank">
-                Repository
-            </a><br><br>
-
-            <a href="https://nbviewer.org/github/LeticiaColombo561/cross-selling-model-ml" target="_blank">
-                View notebooks
-            </a>
-        </div>
-
-    </div>
+</div>
 </section>
 
 <section id="education">
-    <div class="section-title">Education</div>
-    <div class="grid">
+<div class="section-title">Education</div>
 
-        <div class="card">
-            <h3>BSc in Statistics</h3>
-        </div>
-
-        <div class="card">
-            <h3>MSc in Big Data & Business Analytics</h3>
-        </div>
-
-        <div class="card">
-            <h3>Postgraduate in Data Science & AI</h3>
-        </div>
-
-        <div class="card">
-            <h3>Professional Profile</h3>
-            <p>
-                Full CV and credentials available on LinkedIn.
-            </p>
-            <a href="https://www.linkedin.com/in/leticia-colombo-perez/" target="_blank">
-                View LinkedIn Profile
-            </a>
-        </div>
-
-    </div>
+<div class="grid">
+<div class="card">BSc in Statistics</div>
+<div class="card">MSc in Big Data & Business Analytics</div>
+<div class="card">Postgraduate in Data Science & AI</div>
+</div>
 </section>
 
 <section id="contact">
-    <div class="section-title">Contact</div>
-    <div class="card">
-        GitHub:
-        <a href="https://github.com/LeticiaColombo561" target="_blank">
-            github.com/LeticiaColombo561
-        </a>
-        <br><br>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/leticia-colombo-perez/" target="_blank">
-            linkedin.com/in/leticia-colombo-perez
-        </a>
-    </div>
+<div class="section-title">Contact</div>
+
+<div class="card">
+<i class="fab fa-github"></i>
+<a class="btn-link" href="https://github.com/LeticiaColombo561">GitHub</a>
+<br><br>
+<i class="fab fa-linkedin"></i>
+<a class="btn-link" href="https://www.linkedin.com/in/leticia-colombo-perez/">LinkedIn</a>
+</div>
 </section>
 
 <footer>
-    © 2026 Leticia Colombo Perez — Data Science Portfolio
+© 2026 Leticia Colombo Perez — Data Science Portfolio
 </footer>
 
 </div>
-
 </body>
 </html>
