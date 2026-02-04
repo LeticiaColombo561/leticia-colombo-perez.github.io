@@ -11,90 +11,75 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #071a1f;
-    color: #e6f4f1;
+    background: #111;
+    color: #e5e5e5;
 }
 
-.layout {
-    display: flex;
-}
+/* HEADER IMAGE */
 
-/* LEFT IMAGE PANEL */
-
-.side-image {
-    width: 340px;
-    min-height: 100vh;
-    background-image: url("A_digital_artwork_in_a_futuristic_and_cybernetic_a.png");
+.hero {
+    background-image: url("https://images.pexels.com/photos/8386422/pexels-photo-8386422.jpeg");
     background-size: cover;
     background-position: center;
-    position: fixed;
-    left: 0;
-    top: 0;
+    height: 340px;
+    position: relative;
 }
 
-/* MAIN CONTENT */
-
-.main {
-    margin-left: 340px;
-    width: calc(100% - 340px);
-}
-
-/* HEADER */
-
-header {
-    background: #0b2a2f;
-    color: white;
-    padding: 60px 20px;
+.hero-overlay {
+    background: rgba(0,0,0,0.65);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    border-bottom: 2px solid #14b8a6;
 }
 
-header h1 {
+.hero h1 {
     margin: 0;
     font-size: 40px;
+    color: white;
 }
 
-header h2 {
+.hero h2 {
     margin-top: 10px;
     font-weight: normal;
-    opacity: 0.9;
-    color: #5eead4;
+    color: #d4d4d4;
 }
 
 /* NAV */
 
 nav {
-    background: #0f3a40;
-    padding: 15px;
+    background: #1a1a1a;
+    padding: 16px;
     text-align: center;
     position: sticky;
     top: 0;
-    border-bottom: 1px solid #134e4a;
+    border-bottom: 1px solid #333;
 }
 
 nav a {
-    margin: 0 15px;
+    margin: 0 18px;
     text-decoration: none;
-    color: #99f6e4;
+    color: #d4d4d4;
     font-weight: bold;
 }
 
 nav a:hover {
-    color: #2dd4bf;
+    color: white;
 }
 
 /* SECTIONS */
 
 section {
     max-width: 1000px;
-    margin: 60px auto;
+    margin: 70px auto;
     padding: 0 20px;
 }
 
 .section-title {
     font-size: 28px;
-    margin-bottom: 20px;
-    color: #5eead4;
+    margin-bottom: 24px;
+    color: white;
 }
 
 /* ABOUT */
@@ -102,6 +87,7 @@ section {
 .about {
     line-height: 1.7;
     font-size: 16px;
+    color: #cfcfcf;
 }
 
 /* GRID */
@@ -109,57 +95,61 @@ section {
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 22px;
 }
 
 /* CARDS */
 
 .card {
-    background: #0b2a2f;
-    padding: 25px;
+    background: #1a1a1a;
+    padding: 26px;
     border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
     transition: transform 0.2s ease;
-    border: 1px solid #134e4a;
+    border: 1px solid #2a2a2a;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    border-color: #2dd4bf;
+    border-color: #555;
 }
 
 .card h3 {
     margin-top: 0;
-    color: #ccfbf1;
+    color: white;
+}
+
+.card p {
+    color: #c9c9c9;
 }
 
 .card a {
-    color: #2dd4bf;
+    color: #e5e5e5;
     text-decoration: none;
     font-weight: bold;
 }
 
 .card a:hover {
-    color: #5eead4;
+    color: white;
 }
 
 /* BADGES */
 
 .badge {
     display: inline-block;
-    padding: 5px 12px;
+    padding: 6px 12px;
     border-radius: 20px;
     font-size: 12px;
-    background: #134e4a;
-    color: #99f6e4;
-    margin-bottom: 10px;
+    background: #2a2a2a;
+    color: #cfcfcf;
+    margin-bottom: 12px;
 }
 
 /* ICONS */
 
 .icon {
     margin-right: 8px;
-    color: #2dd4bf;
+    color: #bdbdbd;
 }
 
 /* FOOTER */
@@ -167,10 +157,10 @@ section {
 footer {
     text-align: center;
     padding: 40px;
-    background: #0b2a2f;
-    color: #99f6e4;
-    margin-top: 60px;
-    border-top: 1px solid #134e4a;
+    background: #1a1a1a;
+    color: #bdbdbd;
+    margin-top: 70px;
+    border-top: 1px solid #333;
 }
 
 </style>
@@ -178,16 +168,14 @@ footer {
 
 <body>
 
-<div class="layout">
-
-<div class="side-image"></div>
-
-<div class="main">
-
-<header>
-    <h1>Leticia Colombo Perez</h1>
-    <h2>Data Scientist — Machine Learning — AI</h2>
-</header>
+<div class="hero">
+    <div class="hero-overlay">
+        <div>
+            <h1>Leticia Colombo Perez</h1>
+            <h2>Data Scientist — Machine Learning — AI</h2>
+        </div>
+    </div>
+</div>
 
 <nav>
     <a href="#about">About</a>
@@ -199,7 +187,7 @@ footer {
 <section id="about">
 <div class="section-title">About Me</div>
 <div class="about">
-I have over 3 years of experience as a Data Scientist and more than 5 years as a Data Analyst, with strong experience in Machine Learning, Deep Learning, forecasting, recommendation systems and pricing optimization. I work end-to-end from problem definition to production pipelines, with a structured and business-oriented approach.
+I have over 3 years of experience as a Data Scientist and more than 5 years as a Data Analyst, with strong experience in Machine Learning, Deep Learning, forecasting, recommendation systems and pricing optimization. I manage end-to-end data science projects from problem definition to production pipelines with a structured and business-oriented approach.
 </div>
 </section>
 
@@ -219,15 +207,15 @@ I have over 3 years of experience as a Data Scientist and more than 5 years as a
 <div class="card">
 <span class="badge"><i class="fa-solid fa-gears icon"></i>Pipeline</span>
 <h3>Time Series Forecasting Pipeline</h3>
-<p>End-to-end forecasting pipeline with feature engineering and evaluation.</p>
+<p>End-to-end forecasting pipeline with preprocessing and evaluation workflow.</p>
 <a href="https://github.com/LeticiaColombo561/forecsting_pipeline"><i class="fa-brands fa-github"></i> Repository</a><br><br>
 <a href="https://nbviewer.org/github/LeticiaColombo561/forecsting_pipeline">View notebooks</a>
 </div>
 
 <div class="card">
 <span class="badge"><i class="fa-solid fa-brain icon"></i>LSTM</span>
-<h3>LSTM Forecasting</h3>
-<p>Sequence modeling with LSTM neural networks for time series.</p>
+<h3>LSTM Time Series Forecasting</h3>
+<p>Sequence modeling using LSTM neural networks.</p>
 <a href="https://github.com/LeticiaColombo561/LSTM"><i class="fa-brands fa-github"></i> Repository</a><br><br>
 <a href="https://nbviewer.org/github/LeticiaColombo561/LSTM/blob/main/LTSM_series.ipynb">View notebook</a>
 </div>
@@ -243,7 +231,7 @@ I have over 3 years of experience as a Data Scientist and more than 5 years as a
 <div class="card">
 <span class="badge"><i class="fa-solid fa-image icon"></i>CNN</span>
 <h3>Image Classification with CNN</h3>
-<p>Deep learning image classification project using convolutional neural networks.</p>
+<p>Deep learning image classification project using CNN architectures.</p>
 <a href="https://github.com/LeticiaColombo561"><i class="fa-brands fa-github"></i> Repository</a>
 </div>
 
@@ -273,9 +261,6 @@ I have over 3 years of experience as a Data Scientist and more than 5 years as a
 <footer>
 © 2026 Leticia Colombo Perez — Data Science Portfolio
 </footer>
-
-</div>
-</div>
 
 </body>
 </html>
