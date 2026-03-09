@@ -1,7 +1,7 @@
-# 🍺 Predicción de Ventas en una Cervecería — Cervecería Grut '84
+# 🍺 Predicción de Ventas en una Cervecería
 
 <p align="center">
-  <img src="brewery_cover.png" alt="Cervecería Grut '84 — Predicción de Ventas" width="350"/>
+  <img src="brewery_cover.png" alt="Cervecería — Predicción de Ventas" width="350"/>
 </p>
 
 > Proyecto de Machine Learning para predicción de ventas por categoría de producto, utilizando datos históricos 2022–2024 de una cervecería argentina.
@@ -28,7 +28,7 @@
 
 ## 🏪 Contexto del Negocio
 
-**Cervecería Grut '84** es una cervecería argentina que comenzó como un emprendimiento y logró expandir su local al doble de su tamaño original. Hoy dispone de los datos históricos de su primer local (2022–2024) y busca entender qué proyecciones de ventas habría tenido, con el fin de evaluar la viabilidad de mantener o no ese local y optimizar la operación del nuevo.
+**Una cervecería argentina que comenzó como un emprendimiento y logró expandir su local al doble de su tamaño original. Hoy dispone de los datos históricos de su primer local (2022–2024) y busca entender qué proyecciones de ventas habría tenido, con el fin de evaluar la viabilidad de mantener o no ese local y optimizar la operación del nuevo.
 
 ---
 
