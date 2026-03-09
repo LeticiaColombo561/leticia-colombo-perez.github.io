@@ -1,9 +1,5 @@
 # 🍺 Predicción de Ventas en una Cervecería
 
-<p align="center">
-  <img src="brewery_cover.png" alt="Cervecería — Predicción de Ventas" width="350"/>
-</p>
-
 > Proyecto de Machine Learning para predicción de ventas por categoría de producto, utilizando datos históricos 2022–2024 de una cervecería argentina.
 
 **Autoras:** Jeasmine Ñahui · Leticia Colombo  
