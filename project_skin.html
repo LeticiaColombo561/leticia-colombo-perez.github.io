@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Skin Cancer Detection — Leticia Colombo</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0e0e12;
+  --surface: #16161d;
+  --border: #2a2a38;
+  --accent: #2eb87e;
+  --accent2: #6ddcb0;
+  --text: #e2e2ee;
+  --muted: #8888a8;
+}
+
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+
+.hero {
+  position: relative; height: 360px; overflow: hidden;
+  background: linear-gradient(135deg, #0e0e12 0%, #041a10 50%, #0e0e12 100%);
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("https://images.pexels.com/photos/4226219/pexels-photo-4226219.jpeg") center/cover no-repeat;
+  opacity: 0.18;
+}
+.hero-overlay {
+  position: relative; height: 100%;
+  display: flex; align-items: flex-end;
+  padding: 48px 60px;
+}
+.hero-tag {
+  display: inline-block;
+  font-size: 11px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent2);
+  border: 1px solid var(--accent);
+  padding: 5px 14px; border-radius: 20px; margin-bottom: 16px;
+  background: rgba(46,184,126,0.1);
+}
+.hero h1 { font-family: 'DM Serif Display', serif; font-size: 46px; line-height: 1.1; color: #fff; }
+.hero h1 span { color: var(--accent2); }
+.hero-sub { margin-top: 12px; color: var(--muted); font-size: 15px; }
+
+nav {
+  background: rgba(14,14,18,0.95);
+  backdrop-filter: blur(10px);
+  padding: 14px 60px;
+  display: flex; align-items: center; gap: 32px;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+nav a:hover { color: var(--text); }
+nav .back { color: var(--accent2); font-weight: 600; display: flex; align-items: center; gap: 6px; margin-right: auto; }
+
+.container { max-width: 860px; margin: 0 auto; padding: 60px 24px 100px; }
+
+.label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+h2 { font-family: 'DM Serif Display', serif; font-size: 28px; color: #fff; margin-bottom: 24px; }
+.divider { border: none; border-top: 1px solid var(--border); margin: 52px 0; }
+p { color: var(--muted); line-height: 1.8; font-size: 15.5px; margin-bottom: 16px; }
+
+.info-strip {
+  display: flex; flex-wrap: wrap; gap: 24px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 28px 32px; margin-bottom: 52px;
+}
+.info-item { display: flex; flex-direction: column; gap: 4px; }
+.info-item .info-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+.info-item .info-val { font-size: 14px; color: var(--text); }
+
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 28px 0; }
+.metric { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; }
+.metric .val { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--accent2); }
+.metric .met-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.tag { font-size: 12px; font-weight: 500; background: rgba(46,184,126,0.1); color: var(--accent2); border: 1px solid rgba(46,184,126,0.3); padding: 5px 13px; border-radius: 20px; }
+
+.links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .2s; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent2); color: #111; }
+.btn-outline { border: 1px solid var(--border); color: var(--text); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent2); }
+
+.alert {
+  background: rgba(46,184,126,0.08); border: 1px solid rgba(46,184,126,0.25);
+  border-radius: 10px; padding: 18px 22px; margin: 24px 0;
+  color: var(--accent2); font-size: 14px; line-height: 1.6;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-overlay">
+    <div>
+      <div class="hero-tag">Computer Vision · CNN · Transfer Learning</div>
+      <h1>Skin Cancer Detection<br><span>Detección de Cáncer de Piel con CNN</span></h1>
+      <p class="hero-sub">MISTI GTL — AI Uruguay, 2026</p>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <a href="../index.html" class="back"><i class="fa-solid fa-arrow-left"></i> Volver al portfolio</a>
+  <a href="#resumen">Resumen</a>
+  <a href="#metodologia">Metodología</a>
+  <a href="#resultados">Resultados</a>
+  <a href="#recursos">Recursos</a>
+</nav>
+
+<div class="container">
+
+  <div class="info-strip">
+    <div class="info-item"><span class="info-label">Autoras</span><span class="info-val">Leticia Colombo · Jeasmine Ñahui</span></div>
+    <div class="info-item"><span class="info-label">Programa</span><span class="info-val">MISTI GTL — AI Uruguay, 2026</span></div>
+    <div class="info-item"><span class="info-label">Dataset</span><span class="info-val">HAM10000 · 10.015 imágenes</span></div>
+    <div class="info-item"><span class="info-label">Dominio</span><span class="info-val">Salud · Dermatología · Mobile AI</span></div>
+  </div>
+
+  <section id="resumen">
+    <div class="label">01 · Resumen</div>
+    <h2>El problema</h2>
+    <p>Uruguay presenta la tasa más alta de cáncer de piel en América Latina, con aproximadamente 3.100 casos nuevos por año, representando el 19% de todos los diagnósticos oncológicos anuales. A pesar de esto, la mayoría de las personas no revisa regularmente sus lesiones cutáneas, y el tratamiento en estadios avanzados puede costar hasta 50 veces más que su detección temprana.</p>
+    <p>Este proyecto desarrolla un sistema de detección temprana de cáncer de piel basado en redes neuronales convolucionales (CNN), orientado a una aplicación mobile-first accesible desde el celular. El sistema clasifica imágenes dermatoscópicas en benignas o malignas, y está diseñado para asistir —no reemplazar— al dermatólogo, actuando como primera línea de alerta para pacientes.</p>
+    <p>El trabajo fue desarrollado en el marco del programa MISTI GTL — AI Uruguay, 2026, y usa el dataset público HAM10000 (Human Against Machine with 10000 training images), que contiene 10.015 imágenes de lesiones pigmentadas recopiladas durante 20 años en dos centros clínicos independientes de Austria y Australia.</p>
+    <p>El desafío principal del proyecto es técnico y clínico a la vez: el dataset está fuertemente desbalanceado (80% de lesiones benignas dominadas por melanocytic nevi) y, en un contexto médico, el costo de un falso negativo (no detectar un cáncer real) es significativamente mayor que el costo de un falso positivo. Esto orienta toda la metodología hacia maximizar el Recall en la clase maligna.</p>
+
+    <div class="alert">
+      <i class="fa-solid fa-circle-info"></i> Este sistema está diseñado como soporte a la detección temprana, no como herramienta diagnóstica. El flujo contempla que un dermatólogo revise los casos de alto riesgo identificados por el modelo.
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="metodologia">
+    <div class="label">02 · Metodología</div>
+    <h2>Arquitecturas evaluadas</h2>
+    <p>Se entrenaron y compararon cinco configuraciones de modelos, de menor a mayor complejidad. Las imágenes se redimensionaron a 100×75 píxeles y se normalizaron al rango [0,1]. Se aplicó data augmentation (rotaciones, zoom, desplazamientos) y class weights para compensar el desbalance de clases.</p>
+    <p>Los dos primeros modelos son CNN entrenadas desde cero: una con solo imágenes, y una multimodal que incorpora datos tabulares del paciente (edad, sexo, localización de la lesión) mediante una rama paralela con fusión temprana. Los tres modelos restantes usan Transfer Learning con MobileNetV2 preentrenado en ImageNet, con tres variantes: baseline, fine-tuning avanzado, y ajuste con class weights para maximizar recall.</p>
+    <p>La métrica principal de selección fue el Recall en la clase maligna: el modelo seleccionado es la variante Imbalanced (Class Weights) de MobileNetV2, que minimiza los falsos negativos aún a costa de una mayor tasa de falsos positivos.</p>
+    <div class="tags">
+      <span class="tag">CNN desde cero</span>
+      <span class="tag">Transfer Learning</span>
+      <span class="tag">MobileNetV2</span>
+      <span class="tag">Modelo multimodal</span>
+      <span class="tag">HAM10000</span>
+      <span class="tag">Class weights</span>
+      <span class="tag">TensorFlow · Keras</span>
+      <span class="tag">Computer Vision</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="resultados">
+    <div class="label">03 · Resultados</div>
+    <h2>Métricas principales</h2>
+    <p>El modelo CNN multimodal (imágenes + datos tabulares) reduce los falsos negativos de 27 a solo 8 respecto al modelo de solo imágenes, detectando el 98% de los casos malignos en validación. El modelo MobileNetV2 con class weights alcanza un Recall de 0.77 en el set de test, identificando correctamente 277 de 293 casos malignos.</p>
+    <div class="metrics">
+      <div class="metric"><div class="val">98%</div><div class="met-label">Recall malignos — CNN multimodal (validación)</div></div>
+      <div class="metric"><div class="val">0.77</div><div class="met-label">Recall malignos — MobileNetV2 (test)</div></div>
+      <div class="metric"><div class="val">94.5%</div><div class="met-label">Casos malignos detectados — MobileNetV2 test</div></div>
+      <div class="metric"><div class="val">16</div><div class="met-label">Falsos negativos — MobileNetV2 (sobre 293 malignos)</div></div>
+    </div>
+    <p>El hallazgo clave del proyecto es que modelos de mayor complejidad no garantizan mejor performance: la selección de métricas adecuadas y el manejo del desbalance de clases tienen mayor impacto en el resultado final que la arquitectura en sí misma.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="recursos">
+    <div class="label">04 · Recursos</div>
+    <h2>Acceso al proyecto</h2>
+    <p>El repositorio incluye el notebook de EDA, los notebooks de modelado (CNN desde cero, modelo multimodal, Transfer Learning) y la presentación del proyecto.</p>
+    <div class="links">
+      <a href="https://github.com/LeticiaColombo561/leticiacolombo561.github.io/tree/main/Skin_Cancer_Detection" target="_blank" class="btn btn-primary">
+        <i class="fa-brands fa-github"></i> Ver en GitHub
+      </a>
+      <a href="https://nbviewer.org/github/LeticiaColombo561/leticiacolombo561.github.io/blob/main/Skin_Cancer_Detection/Skin%20Cancer%20Detection%20-%20EDA.ipynb" target="_blank" class="btn btn-outline">
+        <i class="fa-solid fa-chart-bar"></i> Ver notebook EDA
+      </a>
+      <a href="https://nbviewer.org/github/LeticiaColombo561/leticiacolombo561.github.io/blob/main/Skin_Cancer_Detection/Skin%20Cancer%20Detection%20-%20TLM.ipynb" target="_blank" class="btn btn-outline">
+        <i class="fa-solid fa-brain"></i> Ver Transfer Learning
+      </a>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

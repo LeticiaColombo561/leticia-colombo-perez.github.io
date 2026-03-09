@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>ClaimStruct — Leticia Colombo</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0e0e12;
+  --surface: #16161d;
+  --border: #2a2a38;
+  --accent: #7c6af7;
+  --accent2: #b09eff;
+  --text: #e2e2ee;
+  --muted: #8888a8;
+}
+
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0e0e12 0%, #1a153a 50%, #0e0e12 100%);
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("https://images.pexels.com/photos/7567442/pexels-photo-7567442.jpeg") center/cover no-repeat;
+  opacity: 0.18;
+}
+.hero-overlay {
+  position: relative; height: 100%;
+  display: flex; align-items: flex-end;
+  padding: 48px 60px;
+}
+.hero-tag {
+  display: inline-block;
+  font-size: 11px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent2);
+  border: 1px solid var(--accent);
+  padding: 5px 14px; border-radius: 20px; margin-bottom: 16px;
+  background: rgba(124,106,247,0.1);
+}
+.hero h1 { font-family: 'DM Serif Display', serif; font-size: 46px; line-height: 1.1; color: #fff; }
+.hero h1 span { color: var(--accent2); }
+.hero-sub { margin-top: 12px; color: var(--muted); font-size: 15px; }
+
+/* NAV */
+nav {
+  background: rgba(14,14,18,0.95);
+  backdrop-filter: blur(10px);
+  padding: 14px 60px;
+  display: flex; align-items: center; gap: 32px;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+nav a:hover { color: var(--text); }
+nav .back { color: var(--accent2); font-weight: 600; display: flex; align-items: center; gap: 6px; margin-right: auto; }
+
+/* LAYOUT */
+.container { max-width: 860px; margin: 0 auto; padding: 60px 24px 100px; }
+
+/* SECTION TITLES */
+.label {
+  font-size: 11px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 10px;
+}
+h2 { font-family: 'DM Serif Display', serif; font-size: 28px; color: #fff; margin-bottom: 24px; }
+
+/* DIVIDER */
+.divider { border: none; border-top: 1px solid var(--border); margin: 52px 0; }
+
+/* PROSE */
+p { color: var(--muted); line-height: 1.8; font-size: 15.5px; margin-bottom: 16px; }
+p:last-child { margin-bottom: 0; }
+
+/* INFO STRIP */
+.info-strip {
+  display: flex; flex-wrap: wrap; gap: 24px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 28px 32px; margin-bottom: 52px;
+}
+.info-item { display: flex; flex-direction: column; gap: 4px; }
+.info-item .info-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+.info-item .info-val { font-size: 14px; color: var(--text); }
+
+/* METRICS */
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 28px 0; }
+.metric {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 22px 24px;
+}
+.metric .val { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--accent2); }
+.metric .met-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* TECH TAGS */
+.tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.tag {
+  font-size: 12px; font-weight: 500;
+  background: rgba(124,106,247,0.1); color: var(--accent2);
+  border: 1px solid rgba(124,106,247,0.3);
+  padding: 5px 13px; border-radius: 20px;
+}
+
+/* LINKS */
+.links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px; border-radius: 8px;
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  transition: all .2s;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent2); color: #111; }
+.btn-outline { border: 1px solid var(--border); color: var(--text); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent2); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-overlay">
+    <div>
+      <div class="hero-tag">Deep Learning · NLP · Transformers</div>
+      <h1>ClaimStruct<br><span>Automatización de Reclamos Bancarios</span></h1>
+      <p class="hero-sub">Especialización en Ciencia de Datos e IA — UTEC · MIT, 2025</p>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <a href="../index.html" class="back"><i class="fa-solid fa-arrow-left"></i> Volver al portfolio</a>
+  <a href="#resumen">Resumen</a>
+  <a href="#metodologia">Metodología</a>
+  <a href="#resultados">Resultados</a>
+  <a href="#recursos">Recursos</a>
+</nav>
+
+<div class="container">
+
+  <div class="info-strip">
+    <div class="info-item"><span class="info-label">Autoras</span><span class="info-val">Leticia Colombo · Jeasmine Ñahui</span></div>
+    <div class="info-item"><span class="info-label">Materia</span><span class="info-val">Deep Learning</span></div>
+    <div class="info-item"><span class="info-label">Programa</span><span class="info-val">Especialización en Ciencia de Datos e IA — UTEC, 2025</span></div>
+    <div class="info-item"><span class="info-label">Dominio</span><span class="info-val">Fintech · NLP · Banca Digital</span></div>
+  </div>
+
+  <!-- RESUMEN -->
+  <section id="resumen">
+    <div class="label">01 · Resumen</div>
+    <h2>El problema</h2>
+    <p>Las entidades financieras reciben un alto volumen de reclamos a través de canales digitales —chat, app móvil, web— redactados en texto libre. El proceso de clasificación es hoy completamente manual, lo que implica costos operativos elevados, inconsistencias en la categorización y baja escalabilidad ante picos de demanda.</p>
+    <p>ClaimStruct propone automatizar este proceso mediante un modelo de lenguaje capaz de, a partir de una conversación de reclamo, identificar la intención del cliente (Intent Detection) y extraer las entidades clave del texto (Named Entity Recognition), generando información estructurada que facilite el enrutamiento interno y el análisis agregado.</p>
+    <p>El proyecto fue desarrollado en el marco de la materia de Deep Learning de la Especialización en Ciencia de Datos e Inteligencia Artificial dictada por UTEC en colaboración con el MIT, y representa un caso de aplicación real de modelos Transformer a un problema del sector bancario.</p>
+    <p>Dado que los datos reales de reclamos bancarios no estaban disponibles por razones de confidencialidad, se construyó un dataset sintético de 8.000 conversaciones con estructura multitabla, cubriendo 8 tipos de intención y entidades anotadas con spans y tipo (AMOUNT, CURRENCY, MERCHANT, entre otras).</p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- METODOLOGÍA -->
+  <section id="metodologia">
+    <div class="label">02 · Metodología</div>
+    <h2>Arquitectura multitarea sobre BERT</h2>
+    <p>El modelo es un Transformer multitarea que comparte un encoder BERT preentrenado en español (bert-base-spanish-wwm-cased / BETO) para resolver simultáneamente las dos tareas: clasificación de intención sobre el token [CLS] mediante attention pooling, y reconocimiento de entidades a nivel token con proyección densa y etiquetado BIO.</p>
+    <p>El encoder se mantuvo congelado durante el entrenamiento dado el origen sintético del dataset, lo que evita sobreajuste sin sacrificar capacidad discriminativa. La función de pérdida combina una cross-entropy ponderada por clase para intención y una loss enmascarada para NER, con pesos configurables por tarea.</p>
+    <p>El pipeline completo contempla: consolidación de mensajes por conversación, split estratificado para mitigar data leakage detectado en el split original, tokenización con offset mapping para alineación BIO precisa, y entrenamiento con Adam + CosineDecay, Early Stopping y ReduceLROnPlateau.</p>
+    <div class="tags">
+      <span class="tag">BERT en español (BETO)</span>
+      <span class="tag">Multitask Learning</span>
+      <span class="tag">Intent Detection</span>
+      <span class="tag">NER · BIO tagging</span>
+      <span class="tag">TensorFlow</span>
+      <span class="tag">HuggingFace Transformers</span>
+      <span class="tag">Dataset sintético</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- RESULTADOS -->
+  <section id="resultados">
+    <div class="label">03 · Resultados</div>
+    <h2>Métricas principales</h2>
+    <p>El modelo alcanza un desempeño global sólido en ambas tareas. En Intent Detection, la gran mayoría de las intenciones logran F1 = 1.00, con una leve caída en clases minoritarias como token_2fa (recall 0.81) por su bajo soporte en el dataset.</p>
+    <div class="metrics">
+      <div class="metric"><div class="val">98%</div><div class="met-label">Accuracy — Intent Detection</div></div>
+      <div class="metric"><div class="val">0.99</div><div class="met-label">Weighted F1 — Intent</div></div>
+      <div class="metric"><div class="val">99%</div><div class="met-label">Accuracy — NER</div></div>
+      <div class="metric"><div class="val">0.97</div><div class="met-label">Macro F1 — Intent</div></div>
+    </div>
+    <p>En NER, el F1 macro bajo (0.36) refleja el fuerte desbalance frente a la clase dominante "O" (no-entidad), comportamiento esperado en este tipo de distribuciones. Las entidades más frecuentes (AMOUNT, CURRENCY, MERCHANT) alcanzan F1 entre 0.61 y 0.77.</p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- RECURSOS -->
+  <section id="recursos">
+    <div class="label">04 · Recursos</div>
+    <h2>Acceso al proyecto</h2>
+    <p>El repositorio incluye el notebook de EDA, el notebook de entrenamiento y evaluación del modelo, y la presentación del proyecto.</p>
+    <div class="links">
+      <a href="https://github.com/LeticiaColombo561/leticiacolombo561.github.io/tree/main/Claim_Struct" target="_blank" class="btn btn-primary">
+        <i class="fa-brands fa-github"></i> Ver en GitHub
+      </a>
+      <a href="https://nbviewer.org/github/LeticiaColombo561/leticiacolombo561.github.io/blob/main/Claim_Struct/1-%20EDA_ClaimStruct.ipynb" target="_blank" class="btn btn-outline">
+        <i class="fa-solid fa-chart-bar"></i> Ver notebook EDA
+      </a>
+      <a href="https://nbviewer.org/github/LeticiaColombo561/leticiacolombo561.github.io/blob/main/Claim_Struct/2-%20Model%20_ClaimStruct.ipynb" target="_blank" class="btn btn-outline">
+        <i class="fa-solid fa-brain"></i> Ver notebook modelo
+      </a>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
