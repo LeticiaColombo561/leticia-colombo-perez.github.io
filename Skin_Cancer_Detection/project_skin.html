@@ -169,12 +169,12 @@ p { color: var(--muted); line-height: 1.8; font-size: 15.5px; margin-bottom: 16p
   <section id="resultados">
     <div class="label">03 · Resultados</div>
     <h2>Métricas principales</h2>
-    <p>El modelo CNN multimodal (imágenes + datos tabulares) reduce los falsos negativos de 27 a solo 8 respecto al modelo de solo imágenes, detectando el 98% de los casos malignos en validación. El modelo MobileNetV2 con class weights alcanza un Recall de 0.77 en el set de test, identificando correctamente 277 de 293 casos malignos.</p>
+    <p>El modelo CNN multimodal (imágenes + datos tabulares) reduce los falsos negativos de 27 a solo 9 respecto al modelo de solo imágenes, detectando el 98% de los casos malignos en validación. El modelo MobileNetV2 con class weights alcanza un Recall de 0.77 en el set de test, identificando correctamente 277 de 293 casos malignos.</p>
     <div class="metrics">
       <div class="metric"><div class="val">98%</div><div class="met-label">Recall malignos — CNN multimodal (validación)</div></div>
-      <div class="metric"><div class="val">0.77</div><div class="met-label">Recall malignos — MobileNetV2 (test)</div></div>
-      <div class="metric"><div class="val">94.5%</div><div class="met-label">Casos malignos detectados — MobileNetV2 test</div></div>
-      <div class="metric"><div class="val">16</div><div class="met-label">Falsos negativos — MobileNetV2 (sobre 293 malignos)</div></div>
+      <div class="metric"><div class="val">37%</div><div class="met-label">Tasa de falsos positivos - prevenir es mejor que curar</div></div>
+     <div class="metric"><div class="val">2%</div><div class="met-label">Falsos negativos en malignos — riesgo minimizado</div></div>
+      <div class="metric"><div class="val">9</div><div class="met-label">Falsos negativos de 391</div></div>
     </div>
     <p>El hallazgo clave del proyecto es que modelos de mayor complejidad no garantizan mejor performance: la selección de métricas adecuadas y el manejo del desbalance de clases tienen mayor impacto en el resultado final que la arquitectura en sí misma.</p>
   </section>
@@ -192,8 +192,11 @@ p { color: var(--muted); line-height: 1.8; font-size: 15.5px; margin-bottom: 16p
       <a href="https://nbviewer.org/github/LeticiaColombo561/leticiacolombo561.github.io/blob/main/Skin_Cancer_Detection/Skin%20Cancer%20Detection%20-%20EDA.ipynb" target="_blank" class="btn btn-outline">
         <i class="fa-solid fa-chart-bar"></i> Ver notebook EDA
       </a>
-      <a href="https://nbviewer.org/github/LeticiaColombo561/leticiacolombo561.github.io/blob/main/Skin_Cancer_Detection/Skin%20Cancer%20Detection%20-%20TLM.ipynb" target="_blank" class="btn btn-outline">
-        <i class="fa-solid fa-brain"></i> Ver Transfer Learning
+      <a href="https://nbviewer.org/github/LeticiaColombo561/leticiacolombo561.github.io/blob/main/Skin_Cancer_Detection/Skin%20Cancer%20Detection%20-%20Zero%20Model%20Img.ipynb" target="_blank" class="btn btn-outline">
+        <i class="fa-solid fa-brain"></i> Ver CNN
+      </a>
+      <a href="https://nbviewer.org/github/LeticiaColombo561/leticiacolombo561.github.io/blob/main/Skin_Cancer_Detection/Skin%20Cancer%20Detection%20-%20Zero%20Model%20Img%20%2B%20tabular.ipynb" target="_blank" class="btn btn-outline">
+        <i class="fa-solid fa-brain"></i> Ver CNN + Tabular Data
       </a>
     </div>
   </section>
