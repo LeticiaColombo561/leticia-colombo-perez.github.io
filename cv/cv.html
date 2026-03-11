@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Leticia Colombo</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0b0b0f;
+  --sidebar:   #111118;
+  --surface:   #15151e;
+  --border:    #252535;
+  --accent:    #b8966a;
+  --accent2:   #dfc9a0;
+  --text:      #ddddf0;
+  --muted:     #7878a0;
+  --dim:       #55557a;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* TOPBAR */
+.topbar {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(11,11,15,0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.topbar-back {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--accent); text-decoration: none;
+  font-size: 13px; font-weight: 500; transition: color .2s;
+}
+.topbar-back:hover { color: var(--accent2); }
+.btn-pdf {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 18px; border-radius: 4px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  text-decoration: none; transition: all .2s;
+}
+.btn-pdf:hover { background: var(--accent); color: #0b0b0f; }
+
+/* PAGE */
+.page {
+  max-width: 1060px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: fadeUp .5s ease both;
+}
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: var(--sidebar);
+  padding: 44px 26px;
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 30px;
+}
+.photo-wrap {
+  width: 104px; height: 104px; border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: linear-gradient(135deg, #1e1e2e, #252535);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto; font-size: 34px; color: var(--dim);
+}
+.sb-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px; font-weight: 700;
+  color: #fff; text-align: center;
+}
+.sb-role {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); text-align: center; margin-top: 4px;
+}
+.sb-deg {
+  font-size: 11px; color: var(--muted);
+  text-align: center; margin-top: 8px; line-height: 1.6;
+  border-top: 1px solid var(--border); padding-top: 10px;
+}
+.sb-title {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--accent);
+  padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+.contact-row {
+  display: flex; align-items: flex-start; gap: 10px; margin-bottom: 9px;
+}
+.contact-row i { color: var(--accent); width: 13px; font-size: 11px; margin-top: 3px; flex-shrink: 0; }
+.contact-row a, .contact-row span {
+  font-size: 12px; color: var(--muted); text-decoration: none;
+  line-height: 1.5; word-break: break-all;
+}
+.contact-row a:hover { color: var(--accent2); }
+.tech-row { margin-bottom: 11px; }
+.tech-label { font-size: 10px; font-weight: 700; color: var(--accent2); margin-bottom: 3px; }
+.tech-val   { font-size: 11px; color: var(--muted); line-height: 1.6; }
+.lang-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px; }
+.lang-name  { font-size: 12px; color: var(--text); }
+.lang-badge {
+  font-size: 10px; color: var(--accent);
+  background: rgba(184,150,106,0.1); border: 1px solid rgba(184,150,106,0.25);
+  padding: 2px 8px; border-radius: 20px;
+}
+
+/* MAIN */
+.main {
+  background: var(--surface);
+  padding: 44px 44px 60px;
+  display: flex; flex-direction: column; gap: 36px;
+}
+.cv-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px; font-weight: 700; color: #fff;
+  line-height: 1; letter-spacing: -1px;
+}
+.cv-title { font-size: 16px; color: var(--accent); font-weight: 700; margin-top: 8px; }
+.cv-sub   { font-size: 12px; color: var(--muted); margin-top: 3px; }
+
+.sec-title {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent);
+  padding-bottom: 9px; border-bottom: 1px solid var(--border); margin-bottom: 20px;
+}
+
+.summary-p { font-size: 13px; color: var(--muted); line-height: 1.9; }
+
+/* experience */
+.exp-item {
+  display: grid; grid-template-columns: 1fr auto; gap: 8px 16px;
+  padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid var(--border);
+}
+.exp-item:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: none; }
+.exp-company {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1.8px; text-transform: uppercase; color: var(--accent);
+}
+.exp-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; color: #fff; margin-top: 2px;
+}
+.exp-period { font-size: 11px; color: var(--dim); white-space: nowrap; text-align: right; padding-top: 2px; }
+.exp-bullets { grid-column: 1/-1; list-style: none; margin-top: 8px; }
+.exp-bullets li {
+  font-size: 13px; color: var(--muted); line-height: 1.75;
+  padding-left: 18px; position: relative; margin-bottom: 3px;
+}
+.exp-bullets li::before {
+  content: '○'; position: absolute; left: 0;
+  color: var(--accent); font-size: 9px; top: 5px;
+}
+
+/* education */
+.edu-item {
+  display: grid; grid-template-columns: 1fr auto; gap: 3px 16px;
+  margin-bottom: 16px; align-items: start;
+}
+.edu-item:last-child { margin-bottom: 0; }
+.edu-inst {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent);
+}
+.edu-degree { font-size: 14px; color: var(--text); margin-top: 2px; }
+.edu-year { font-size: 11px; color: var(--dim); white-space: nowrap; padding-top: 2px; }
+
+/* certifications */
+.cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; }
+.cert-org  { font-size: 10px; font-weight: 700; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; }
+.cert-name { font-size: 12px; color: var(--muted); line-height: 1.5; margin-top: 2px; }
+.cert-year { font-size: 11px; color: var(--dim); margin-top: 2px; }
+
+@media (max-width: 760px) {
+  .page { grid-template-columns: 1fr; }
+  .sidebar { border-right: none; border-bottom: 1px solid var(--border); }
+  .main { padding: 32px 24px; }
+  .topbar { padding: 0 20px; }
+  .cv-name { font-size: 38px; }
+  .cert-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-back" href="index.html">
+    <i class="fa-solid fa-arrow-left"></i> Volver al portfolio
+  </a>
+  <a class="btn-pdf" href="CV_Leticia_Colombo_2025.pdf" target="_blank">
+    <i class="fa-solid fa-file-pdf"></i> Descargar CV
+  </a>
+</nav>
+
+<div class="page">
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar">
+
+    <div class="photo-wrap">
+      <i class="fa-solid fa-user"></i>
+    </div>
+
+    <div>
+      <div class="sb-name">Leticia Colombo</div>
+      <div class="sb-role">Data Scientist</div>
+      <div class="sb-deg">Lic. en Estadística<br>Msc. en Big Data y Business Analytics</div>
+    </div>
+
+    <div>
+      <div class="sb-title">Contacto</div>
+      <div class="contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:leticiacolombop@gmail.com">leticiacolombop@gmail.com</a></div>
+      <div class="contact-row"><i class="fa-solid fa-phone"></i><span>094 990 971</span></div>
+      <div class="contact-row"><i class="fa-solid fa-location-dot"></i><span>Montevideo, Uruguay</span></div>
+      <div class="contact-row"><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/leticia-colombo-perez/" target="_blank">leticia-colombo-perez</a></div>
+      <div class="contact-row"><i class="fa-brands fa-github"></i><a href="https://github.com/LeticiaColombo561" target="_blank">LeticiaColombo561</a></div>
+    </div>
+
+    <div>
+      <div class="sb-title">Tech Stack</div>
+      <div class="tech-row"><div class="tech-label">Lenguajes de Programación</div><div class="tech-val">Python, SQL</div></div>
+      <div class="tech-row"><div class="tech-label">Plataformas</div><div class="tech-val">Databricks, Google Cloud Platform</div></div>
+      <div class="tech-row"><div class="tech-label">Análisis y Visualización</div><div class="tech-val">Pandas, NumPy, Matplotlib, Seaborn, Tableau</div></div>
+      <div class="tech-row"><div class="tech-label">Machine Learning</div><div class="tech-val">Scikit-learn, TensorFlow, PySpark</div></div>
+      <div class="tech-row"><div class="tech-label">Bases de Datos</div><div class="tech-val">SQL</div></div>
+      <div class="tech-row"><div class="tech-label">Control de Versiones</div><div class="tech-val">Git, GitHub</div></div>
+    </div>
+
+    <div>
+      <div class="sb-title">Idiomas</div>
+      <div class="lang-row"><span class="lang-name">Español</span><span class="lang-badge">Nativo</span></div>
+      <div class="lang-row"><span class="lang-name">Inglés</span><span class="lang-badge">FCE</span></div>
+    </div>
+
+  </aside>
+
+  <!-- ═══ MAIN ═══ -->
+  <main class="main">
+
+    <div>
+      <div class="cv-name">Leticia<br>Colombo</div>
+      <div class="cv-title">Data Scientist</div>
+      <div class="cv-sub">Lic. en Estadística &nbsp;·&nbsp; Msc. en Big Data y Business Analytics</div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Summary</div>
+      <p class="summary-p">Con más de 4 años de experiencia como Data Scientist y más de 5 años como Data Analyst, tengo una sólida trayectoria en el desarrollo de modelos de Machine Learning y Deep Learning, cubriendo tanto algoritmos supervisados como no supervisados. Mi experiencia incluye la creación de modelos de clasificación, recomendación de productos y redes neuronales para clasificación de imágenes. Además, he trabajado en la optimización de estrategias de Pricing para supermercados, aplicando técnicas avanzadas para ajustar precios de manera eficiente. Estoy capacitada para gestionar proyectos completos de ciencia de datos, desde la definición del problema y la recopilación y limpieza de datos, hasta el modelado y la implementación de pipelines. Me caracterizo por un enfoque estructurado en la resolución de problemas y por mi habilidad para colaborar eficazmente en equipo.</p>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Work Experience</div>
+
+      <div class="exp-item">
+        <div><div class="exp-company">Itaú</div><div class="exp-role">Sr. Data Scientist</div></div>
+        <div class="exp-period">Dic 2024 — Actualidad</div>
+        <ul class="exp-bullets">
+          <li>Modelo de propensión a la inversión</li>
+          <li>Construcción del índice de fidelidad del cliente</li>
+          <li>Construcción de pipeline para monitoreo de los modelos en producción</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div><div class="exp-company">Cencosud</div><div class="exp-role">Sr. Data Scientist</div></div>
+        <div class="exp-period">Jul 2023 — Dic 2024</div>
+        <ul class="exp-bullets">
+          <li>Refactoring de proyecto de pricing en supermercados</li>
+          <li>Proyecto de Pricing Promo: predicción de las promociones óptimas para los productos de supermercados</li>
+          <li>Investigación sobre predicción de series temporales con LLMs</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div><div class="exp-company">MercadoLibre</div><div class="exp-role">Sr. Data Scientist</div></div>
+        <div class="exp-period">Ene 2023 — Jul 2023</div>
+        <ul class="exp-bullets">
+          <li>Modelo asociado a la validación de identidad</li>
+          <li>OCR para la extracción de caracteres y validación de documentos de identidad</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div><div class="exp-company">PedidosYa</div><div class="exp-role">Data Scientist</div></div>
+        <div class="exp-period">Jul 2020 — Ene 2023</div>
+        <ul class="exp-bullets">
+          <li>Clasificación de imágenes utilizando Redes Neuronales Convolucionales</li>
+          <li>Modelo de clasificación: predicción del estado de una Orden</li>
+          <li>Modelo de clasificación: predicción de saturación del Restaurante</li>
+          <li>Modelo de asociación (Market Basket Analysis) para recomendación de productos en el carrito</li>
+          <li>Desarrollo de la evaluación de los resultados de los A/B test en la herramienta del equipo</li>
+          <li>Investigación sobre desarrollo de plataforma de Machine Learning</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div><div class="exp-company">PedidosYa</div><div class="exp-role">Data Analyst</div></div>
+        <div class="exp-period">Sep 2019 — Jul 2020</div>
+        <ul class="exp-bullets">
+          <li>Elaboración de A/B test para validar los cambios dentro de la aplicación</li>
+          <li>Análisis del comportamiento del usuario dentro de la aplicación en las diferentes features</li>
+          <li>Análisis del ranking de la aplicación para una futura personalización según el perfil del usuario</li>
+          <li>Análisis de segmentación del usuario para realizar ofertas personalizadas</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div><div class="exp-company">República AFAP S.A.</div><div class="exp-role">Asesora en Estadística y Actuarial</div></div>
+        <div class="exp-period">Abr 2016 — Ago 2019</div>
+        <ul class="exp-bullets">
+          <li>Micro simulaciones en R para predecir la decisión de desafiliación de cada afiliado según la ley 19.590, con error de predicción del 29%</li>
+          <li>Proyección del recaudo y presupuesto anual para las áreas de Administración y Finanzas y Comercial</li>
+          <li>Diseño y automatización del monitor de servicios del área comercial</li>
+          <li>Investigación presentada en las XXXIII Jornadas Anuales de Economía del Banco Central del Uruguay</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div><div class="exp-company">Financiera Protno!</div><div class="exp-role">Analista de Gestión Estratégica</div></div>
+        <div class="exp-period">Ene 2015 — Abr 2016</div>
+        <ul class="exp-bullets">
+          <li>Medición y seguimiento de los Balance Score Card de la compañía para la generación de KPIs</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div><div class="exp-company">Financiera Así</div><div class="exp-role">Pasantía</div></div>
+        <div class="exp-period">Nov 2014 — Abr 2015</div>
+        <ul class="exp-bullets">
+          <li>Modelo de scoring crediticio con Regresión Logística y CART: especificidad 68%, sensibilidad 70%, con nivel de confianza al 95%</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Education</div>
+
+      <div class="edu-item">
+        <div><div class="edu-inst">UTEC</div><div class="edu-degree">Postgrado en Ciencia de Datos e Inteligencia Artificial</div></div>
+        <div class="edu-year">2025 — actualidad</div>
+      </div>
+      <div class="edu-item">
+        <div><div class="edu-inst">IMF Business School — Universidad Camilo José Cela</div><div class="edu-degree">Máster en Business Analytics y Big Data</div></div>
+        <div class="edu-year">2019</div>
+      </div>
+      <div class="edu-item">
+        <div><div class="edu-inst">Pontificia Universidad Católica de Chile</div><div class="edu-degree">Diplomado Internacional en Especialización en Ciencias Actuariales</div></div>
+        <div class="edu-year">2017</div>
+      </div>
+      <div class="edu-item">
+        <div><div class="edu-inst">Facultad de Ciencias Económicas — UDELAR</div><div class="edu-degree">Licenciatura en Estadística</div></div>
+        <div class="edu-year">2010 — 2015</div>
+      </div>
+      <div class="edu-item">
+        <div><div class="edu-inst">Instituto de Profesores Artigas</div><div class="edu-degree">Profesorado de Matemáticas</div></div>
+        <div class="edu-year">2007</div>
+      </div>
+
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Other Education</div>
+      <div class="cert-grid">
+        <div class="cert-item"><div class="cert-org">Udemy</div><div class="cert-name">AWS Certified Machine Learning Speciality — Hands On!</div><div class="cert-year">2024</div></div>
+        <div class="cert-item"><div class="cert-org">Coursera</div><div class="cert-name">Machine Learning Engineering for Production (MLOps)</div><div class="cert-year">2022</div></div>
+        <div class="cert-item"><div class="cert-org">Instituto Bios</div><div class="cert-name">SPSS</div><div class="cert-year">2019</div></div>
+        <div class="cert-item"><div class="cert-org">Educación IT</div><div class="cert-name">Introducción a Bases de Datos y SQL</div><div class="cert-year">2016</div></div>
+        <div class="cert-item"><div class="cert-org">Taller de Informática</div><div class="cert-name">Excel Avanzado</div><div class="cert-year">2015</div></div>
+        <div class="cert-item"><div class="cert-org">UDELAR</div><div class="cert-name">R-Project</div><div class="cert-year">2010 — 2015</div></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
